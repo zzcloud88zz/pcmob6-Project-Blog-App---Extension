@@ -5,7 +5,7 @@ import { commonStyles } from "../styles/commonStyles";
 export default function SignUpScreen({ navigation }) {
   return (
     <View style={commonStyles.container}>
-      <Text>Sign Up Screen</Text>
+      <Text>hahaha</Text>
     </View>
   );
 }

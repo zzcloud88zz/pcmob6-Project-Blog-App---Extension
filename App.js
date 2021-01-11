@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState, useEffect } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import SignInScreen from "./screens/SignInScreen";
+import SignUpScreen from "./screens/SignUpScreen";
 import AccountScreen from "./screens/AccountScreen";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -34,6 +35,7 @@ export default function App() {
       <Stack.Navigator mode="modal" headerMode="none" initialRouteName={signedIn ? "Account" : "SignIn"}>
         <Stack.Screen component={AccountScreen} name="Account" />
         <Stack.Screen component={SignInScreen} name="SignIn" />
+        <Stack.Screen component={SignUpScreen} name="SignUp" />
       </Stack.Navigator>
     </NavigationContainer>
   );

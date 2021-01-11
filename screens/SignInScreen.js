@@ -32,7 +32,7 @@ export default function SignInScreen({ navigation }) {
       console.log("Success logging in!");
       console.log(response);
 
-      AsyncStorage.setItem("token", response.data.access_token);
+      await AsyncStorage.setItem("token", response.data.access_token);
       navigation.navigate("Account");
     } catch (error) {
       console.log("Error logging in!");
@@ -45,7 +45,8 @@ export default function SignInScreen({ navigation }) {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <Text style={styles.title}>Sign in to blog</Text>
+        <Text style={styles.title}>Welcome to Blog App!</Text>
+        <Text style={styles.title}>Sign in below!</Text>
         <Text style={styles.fieldTitle}>Username</Text>
         <TextInput
           style={styles.input}
@@ -67,6 +68,9 @@ export default function SignInScreen({ navigation }) {
         <TouchableOpacity onPress={login} style={styles.loginButton}>
           <Text style={styles.buttonText}>Log in</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+          <Text style={styles.buttonText}>Don't have an account? Sign up here!</Text>
+        </TouchableOpacity>
         <Text style={styles.errorText}>{errorText}</Text>
       </View>
     </TouchableWithoutFeedback>
@@ -80,9 +84,10 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   title: {
-    fontSize: 36,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 24,
+    textAlign: "center",
   },
   fieldTitle: {
     fontSize: 18,
@@ -98,7 +103,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   loginButton: {
-    backgroundColor: "blue",
+    backgroundColor: "hotpink",
     width: 120,
     alignItems: "center",
     padding: 18,
@@ -106,7 +111,7 @@ const styles = StyleSheet.create({
     marginBottom: 36,
   },
   buttonText: {
-    color: "white",
+    color: "black",
     fontWeight: "bold",
     fontSize: 18,
   },
