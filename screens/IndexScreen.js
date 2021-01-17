@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import DataFetching from "../components/DataFetching";
 import { commonStyles } from "../styles/commonStyles";
 import { useSelector } from "react-redux";
 
@@ -8,13 +9,18 @@ export default function IndexScreen({ navigation }) {
 
   return (
     <View style={[
-      commonStyles.container,
+      styles.container,
       isDarkModeOn && { backgroundColor: "black" },    
     ]}
     >
-      <Text style={isDarkModeOn && { color: "white" }}>Index Screen</Text>
+      <DataFetching navigation={navigation} />
     </View>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "whitesmoke",
+  },
+});
