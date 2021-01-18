@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, TouchableOpacity, Alert } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { FlatList } from "react-native-gesture-handler";
 
 const API = "https://zzcloud88zz.pythonanywhere.com";
 const API_ALLPOSTS = "/posts";
@@ -74,7 +75,6 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingTop: 10,
     paddingBottom: 10,
-    borderBottomColor: "black",
     color: "grey",
   }
 });

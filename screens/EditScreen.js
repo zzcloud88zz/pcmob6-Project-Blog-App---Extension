@@ -40,11 +40,11 @@ export default function EditScreen({ route, navigation }) {
     </View>
   );
 
-  function editPost() {
+  async function editPost() {
     Keyboard.dismiss();
 
     try {
-      const response = axios.put(API + API_EDIT + id, {
+      const response = await axios.put(API + API_EDIT + id, {
         title,
         content,
       })

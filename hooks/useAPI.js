@@ -71,10 +71,15 @@ export function useAuth(username, password, navigationCallback) {
 
     try {
       setLoading(true);
-      await axios.post(API + API_SIGNUP, {
+      const response = await axios.post(API + API_SIGNUP, {
         username,
         password,
       });
+      if (response.data.Error === "User already exists") {
+        setErrorText("This user exists");
+        setLoading(false);
+        return;
+      }
       console.log("Success signing up!");
       login();
     } catch (error) {
