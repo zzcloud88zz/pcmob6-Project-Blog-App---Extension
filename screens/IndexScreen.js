@@ -20,7 +20,7 @@ export default function IndexScreen({ navigation, route }) {
     .catch(error => {
       console.log(error)
     })
-  }, [route.params?.title, route.params?.content])
+  }, [route.params?.title, route.paramas?.content])
 
   return (
     <View style={[

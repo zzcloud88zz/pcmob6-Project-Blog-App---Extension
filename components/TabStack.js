@@ -3,6 +3,8 @@ import { TouchableOpacity } from "react-native";
 import AccountScreen from "../screens/AccountScreen";
 import IndexScreen from "../screens/IndexScreen";
 import CreateScreen from "../screens/CreateScreen";
+import ShowScreen from "../screens/ShowScreen";
+import EditScreen from "../screens/EditScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Entypo } from '@expo/vector-icons';
@@ -29,6 +31,8 @@ function BlogStack({ navigation }) {
         ), }}
       />
       <Stack.Screen component={CreateScreen} name="createPost" options={{ title: 'Create Post' }}/>
+      <Stack.Screen component={ShowScreen} name="showPost" options={{ title: 'Your Post' }}/>
+      <Stack.Screen component={EditScreen} name="editPost" options={{ title: 'Edit Post' }}/>
     </Stack.Navigator>
   );
 }

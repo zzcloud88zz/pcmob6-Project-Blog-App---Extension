@@ -39,11 +39,11 @@ export default function CreateScreen({ navigation }) {
     </View>
   );
 
-  function createPost() {
+  async function createPost() {
     Keyboard.dismiss();
 
     try {
-      const response = axios.post(API + API_CREATE, {
+      const response = await axios.post(API + API_CREATE, {
         title,
         content,
       });
